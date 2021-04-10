@@ -1,5 +1,3 @@
-const Profile = require('../models/Profile')
-
 module.exports = {
   remainingDays(job) {
     const totalDays = (job['total-hours'] / job['daily-hours']).toFixed()
@@ -15,5 +13,5 @@ module.exports = {
 
     return dayDiff
   },
-  calculateAmount: (job) => Profile.get()['value-hour'] * job['total-hours']
+  calculateAmount: (job, profile) => profile['value-hour'] * job['total-hours']
 }
